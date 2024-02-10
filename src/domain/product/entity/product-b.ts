@@ -4,11 +4,13 @@ export default class ProductB implements ProductInterface {
   private _id: string;
   private _name: string;
   private _price: number;
+  private _type: string;
 
   constructor(id: string, name: string, price: number) {
     this._id = id;
     this._name = name;
     this._price = price;
+    this._type = "b";
     this.validate();
   }
 
@@ -22,6 +24,10 @@ export default class ProductB implements ProductInterface {
 
   get price(): number {
     return this._price * 2;
+  }
+
+  get type(): string {
+    return this._type;
   }
 
   changeName(name: string): void {

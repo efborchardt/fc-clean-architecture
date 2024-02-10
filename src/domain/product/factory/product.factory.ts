@@ -18,4 +18,20 @@ export default class ProductFactory {
         throw new Error("Product type not supported");
     }
   }
+
+  public static createWithId(
+    id:   string,
+    type: string,
+    name: string,
+    price: number
+  ): ProductInterface {
+    switch (type) {
+      case "a":
+        return new Product(id, name, price);
+      case "b":
+        return new ProductB(id, name, price);
+      default:
+        throw new Error("Product type not supported");
+    }
+  }
 }
